@@ -182,7 +182,7 @@ if (stringOne > stringTwo) {
     return 1
 } else if (stringOne < stringTwo) {
     return -1
-} else if (stringOne === stringTwo) {
+} else {
     return 0
 };
 
