@@ -21,6 +21,12 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
+    var newString = ""
+    var inpArr = input.split("");
+    for (var i = inpArr.length-1; i >= 0; i--) {
+      newString += inpArr[i];
+    }
+return newString;
     
     
     
