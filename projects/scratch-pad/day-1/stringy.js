@@ -158,8 +158,11 @@ return args.join("");
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+if (stringTwo.length > stringOne.length) {
+    return stringTwo
+} else {
+    return stringOne
+};
 
 
 
@@ -175,7 +178,13 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+if (stringOne > stringTwo) {
+    return 1
+} else if (stringOne < stringTwo) {
+    return -1
+} else if (stringOne === stringTwo) {
+    return 0
+};
 
 
     // YOUR CODE ABOVE HERE //
