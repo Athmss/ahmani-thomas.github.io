@@ -59,7 +59,11 @@ return string.toUpperCase();
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-return string.toDashCase();
+    return string.replace(/\s+/g, "-").toLowerCase();
+    
+
+
+
 
 
     // YOUR CODE ABOVE HERE //
@@ -79,8 +83,11 @@ return string.toDashCase();
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-    
+if (string[0].toUpperCase() === char.toUpperCase()) {
+    return true
+} else {
+    return false
+};
 
     // YOUR CODE ABOVE HERE //
 }
@@ -99,7 +106,11 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+if (string[string.length-1].toUpperCase() === char.toUpperCase()) {
+    return true
+} else {
+    return false
+};
 
 
     // YOUR CODE ABOVE HERE //
