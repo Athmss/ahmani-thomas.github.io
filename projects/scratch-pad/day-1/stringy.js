@@ -124,7 +124,7 @@ if (string[string.length-1].toUpperCase() === char.toUpperCase()) {
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+return stringOne + stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -142,7 +142,7 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+return args.join("");
 
     // YOUR CODE ABOVE HERE //
 }
@@ -158,6 +158,8 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+
+
 
 
 
