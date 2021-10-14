@@ -15,7 +15,13 @@
 function isArray(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    // create if statement that test value as Array //
+   
+    if (Array.isArray(value )) {
+       return true;
+   } else {
+       return false;
+   }
     
     
     // YOUR CODE ABOVE HERE //
@@ -32,7 +38,11 @@ function isArray(value) {
 function isObject(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    if (typeof value === "Object" && Array.isArray(value) !== true  && typeof value !== null && value instanceof Date !== false ) {
+        return true;
+    } else {
+        return false;
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -75,7 +85,11 @@ function isCollection(value) {
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    if (Array.isArray(value)) {
+        return "array";
+    } else {
+        return value
+    }
     
     
     // YOUR CODE ABOVE HERE //
