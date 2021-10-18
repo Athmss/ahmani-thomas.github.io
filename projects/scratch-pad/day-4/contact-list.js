@@ -36,21 +36,40 @@
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
 
-} 
+    var obj = {};
+    obj.id = id;
+    obj.nameFirst = nameFirst;
+    obj.nameLast = nameLast;
+    return obj;
+
+}
 
 
 function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
-    }
+        },
+         addContact: function(contactObj) {
+             contacts.push(contactObj);
+         },
+         findContact: function(fullname) {
+            var splitArr = fullname.split(" ");
+
+            for (var i = 0; i < contacts.length; i++) {
+                if (splitArr[0] === contacts[i].nameFirst && splitArr[1] === contacts[i].nameLast) {
+                    return contacts[i];
+
+                }
+            }
+         }
+        
 }
 
 
@@ -67,4 +86,5 @@ if((typeof process !== 'undefined') &&
     // here, export any references you need for tests //
     module.exports.makeContact = makeContact;
     module.exports.makeContactList = makeContactList;
+}
 }

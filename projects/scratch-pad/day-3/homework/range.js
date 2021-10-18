@@ -24,7 +24,18 @@
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     
+    var rangeArr = [];
     
+    if (start < end) {
+        for (var i = start; i <= end; i++) {
+            rangeArr.push(i);
+        } else {
+            for (var i = start; i >= end; i--) {
+                rangeArr.push(i);
+            }
+        }
+
+    return rangeArr;
     
     
     // YOUR CODE GOES ABOVE HERE //
@@ -39,4 +50,4 @@ if((typeof process !== 'undefined') &&
    (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports.range = range;
-}
+   } 
