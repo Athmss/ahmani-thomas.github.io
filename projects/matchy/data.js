@@ -12,19 +12,30 @@
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+var animal = {};
+animal.species = "fox";
+animal["name"] = "Lu";
+animal.noises = [];
+console.log(animal);
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+var noises = [];
+noises[0] = "growl";
+noises.push("whimper");
+noises.unshift("bark");
+noises[noises.length] = "howl";
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+animal["noises"] = noises;
+animal.noises.push("yip");
 
 /* *******************************************************************
  * Step 4 - Review
@@ -49,13 +60,26 @@
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+var animals = [];
+animals.push(animal);
+var duck = {species: "duck", name: "Jerome", noises: ["quack", "honk", "sneeze", "whosh"]};
+animals.push(duck);
+var dog = {species: "dog", name: "Chip", noises: ["bark", "growl"]};
+animals.push(dog);
+var cat = {species: "cat", name: "Garfiel", noises: ["meow", "pur"]};
+animals.push(cat);
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+var friends = [];
+// array was chosen because list is simple with values that relate to singular idea
+function getRandom(animals) {
+  return Math.random();
+}
+friends.push(animals[3].name);
+dog["friends"] = friends;
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
