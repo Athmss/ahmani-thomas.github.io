@@ -14,11 +14,6 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-   
-       
-       
-   }
-       
     
     // YOUR CODE ABOVE HERE //
 }
@@ -44,8 +39,16 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
+    var startUpper = startsWith.toUpperCase();
+    return function(string) {
+        var strUpper = string.toUpperCase()
+        if (strUpper[0] === startUpper) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -58,7 +61,15 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    var endUpper = endsWith.toUpperCase();
+    return function(string) {
+        var strUpper = string.toUpperCase();
+        if (strUpper[strUpper.length - 1] === endUpper) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     
@@ -75,7 +86,12 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
-    
+    var outputArr = [];
+
+    for (var i = 0; i < strings.length; i++) {
+        outputArr.push(modify(strings[i]));
+    }
+    return outputArr;
     
     
     // YOUR CODE ABOVE HERE //
@@ -93,9 +109,16 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     
-    
-    
-    
+    var testPass = true;
+
+    for (var i = 0; i < strings.length; i++) {
+        if (test(strings[i] === true)) {
+            testPass;
+        } else {
+            return false;
+        }
+    }
+     return testPass;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -109,4 +132,4 @@ if((typeof process !== 'undefined') &&
     module.exports.createEndsWithFilter = createEndsWithFilter;
     module.exports.modifyStrings = modifyStrings;
     module.exports.allStringsPass = allStringsPass;   
-}
+    }

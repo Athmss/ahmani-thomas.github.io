@@ -96,11 +96,9 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
   for (var key in object) {
     console.log(object[key]);
   }
-  
   
   // YOUR CODE ABOVE HERE //
 }
@@ -110,13 +108,9 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
-  
-
   for (var key in object) {
-    return object[key].length;
-  }
-
-  
+      return Object.keys(object).length;
+}
   
   // YOUR CODE ABOVE HERE //
 }
