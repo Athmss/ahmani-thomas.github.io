@@ -13,7 +13,15 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+    if (typeof base === "string" || typeof base === "number") {
+        return function(value) {
+            if (value > base) {
+               return true;
+            } else {
+               return false;
+            }
+        }
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -26,6 +34,15 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
+    if (typeof base === "string" || typeof base === "number") {
+        return function(value) {
+            if (value < base) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
     
     
     
@@ -41,7 +58,7 @@ function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     var startUpper = startsWith.toUpperCase();
     return function(string) {
-        var strUpper = string.toUpperCase()
+        var strUpper = string.toUpperCase();
         if (strUpper[0] === startUpper) {
             return true;
         } else {
@@ -112,7 +129,7 @@ function allStringsPass(strings, test) {
     var testPass = true;
 
     for (var i = 0; i < strings.length; i++) {
-        if (test(strings[i] === true)) {
+        if (test(strings[1]) === true) {
             testPass;
         } else {
             return false;

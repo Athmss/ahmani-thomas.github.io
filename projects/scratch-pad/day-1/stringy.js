@@ -178,7 +178,13 @@ if (stringTwo.length > stringOne.length) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+if (stringOne.toLowerCase() > stringTwo.toLowerCase()) {
+    return 1;
+} else if (stringOne.toLowerCase() < stringTwo.toLowerCase()) {
+    return -1;
+} else {
+    return 0;
+}
 
     // YOUR CODE ABOVE HERE //
 }
@@ -194,6 +200,13 @@ function sortAscending(stringOne, stringTwo) {
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
+    if (stringOne.toLowerCase() < stringTwo.toLowerCase()) {
+        return 1;
+    } else if (stringOne.toLowerCase() > stringTwo.toLowerCase()) {
+        return -1;
+    } else {
+        return 0;
+    }
 
 
 
