@@ -68,7 +68,19 @@ function makeContactList() {
 
                 }
             }
-         }
+         },
+         removeContact: function(contactObj) {
+             for (var i = 0; i < contacts.length; i++) {
+                 if (contacts[i].nameFirst === contactObj.nameFirst) {
+                     return contacts.splice(i, 1);
+                    }
+             }
+
+         },
+
+         printAllContactNames: function 
+
+        }
         
 }
 
