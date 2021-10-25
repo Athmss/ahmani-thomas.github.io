@@ -16,8 +16,13 @@ const { animal } = require("./data");
 //////////////////////////////////////////////////////////////////////
  function search(animalArr, animalStr) {
      for (var i = 0; i < animalArr.length; i++) {
-         console.log(animalArr[i].name);
-     }  if (animalArr[i].name === animalStr)         return animalArr[i];
+       if (animalArr[i].name === animalStr) {
+           return Object.enteries(animalArr[i]);
+       } else {
+           return null;
+       }
+    }
+}
 
 
 
@@ -31,7 +36,7 @@ const { animal } = require("./data");
 //     } if (animals[i].name === name) {
 //         return animals[i] = replacement;
 //     }
-// }
+
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
