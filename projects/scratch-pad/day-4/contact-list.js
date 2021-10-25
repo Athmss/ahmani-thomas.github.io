@@ -42,7 +42,7 @@ function makeContact(id, nameFirst, nameLast) {
     obj.nameLast = nameLast;
     return obj;
 
-}
+};
 
 
 function makeContactList() {
@@ -73,23 +73,35 @@ function makeContactList() {
              for (var i = 0; i < contacts.length; i++) {
                  if (contacts[i].nameFirst === contactObj.nameFirst) {
                      return contacts.splice(i, 1);
-                    }
-             }
+                 }
+                }
+            },
 
-         },
+            printAllContactNames: function() {
+                var fullNameArr = [];
+                
+                for (var i = 0; i < contacts.length; i++) {
+                    fullNameArr.push(contacts[i].nameFirst + " " + contacts[i].nameLast);
+                }
 
-         printAllContactNames: function 
+                return fullNameArr.join("\n");
+            }
+    
 
-        }
+
+
+
+
         
-}
+         
+
 
 
 
 
 // YOUR CODE GOES ABOVE HERE //
 
-
+    }
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
@@ -99,4 +111,4 @@ if((typeof process !== 'undefined') &&
     module.exports.makeContact = makeContact;
     module.exports.makeContactList = makeContactList;
 }
-}
+    }
