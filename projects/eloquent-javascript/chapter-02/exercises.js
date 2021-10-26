@@ -5,7 +5,7 @@
 
 function triangles() {
 
-  for (let i = "#"; i.length < 8; i += "#") {
+  for (var i = "#"; i.length < 8; i += "#") {
     console.log(i);
   }
   
@@ -34,12 +34,12 @@ function fizzBuzz() {
 
 function drawChessboard() {
   
-  let board = " ";
+  var board = " ";
 
-  let grid = 8;
+  var grid = 8;
 
-  for (let a = 0; a < grid; a++) {
-    for (let b = 0; b < grid; b++) {
+  for (var a = 0; a < grid; a++) {
+    for (var b = 0; b < grid; b++) {
       if ((a + b) % 2 === 0) {
         board += " ";
       } else {

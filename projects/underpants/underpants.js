@@ -48,8 +48,8 @@ _.identity = function(value) {
       _.typeof = function(value) {
           if (Array.isArray(value) === true) {
               return "array";
-            } else if 
-      
+          }
+        }
 _
 /** _.first
 * Arguments:
@@ -105,6 +105,15 @@ _
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(array, value) {
+    
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === value) {
+            return i;
+        } 
+     }
+     return -1;
+}
 
 /** _.contains
 * Arguments:
@@ -121,6 +130,14 @@ _
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+_.contains = function(array, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === value) {
+            return true;
+        }
+    }
+    return false;
+}
 
 /** _.each
 * Arguments:
@@ -149,6 +166,14 @@ _
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function (array) {
+    var newArr = [];
+    for (var i = 0; i < array.length; i++) {
+        if 
+    }
+
+    
+}
 
 /** _.filter
 * Arguments:

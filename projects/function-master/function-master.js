@@ -23,9 +23,15 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-   
-
+    var strArr = [];
+    for (var key in object) {
+        if (typeof object[key] === "string") {
+            strArr.push(object[key]);
+        }
     }
+    return strArr.join(" ");
+
+}
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
@@ -70,11 +76,11 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-         if (object(object) === "name") {
+    if (object.key == "name")
     return "Welcome " + object["name"] + "!";
-         }
-
 }
+
+
 
 
 
@@ -96,13 +102,13 @@ function profileInfo(object) {
 
 function maybeNoises(object) {
     for (var key in object) {
-        return object["noises"].join(" ");
-    } else {
-        return "there are no noises"
-    }
+        object["noises"].join(" ");
+    
+         "there are no noises"
+    
     }
 
-}
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
@@ -183,4 +189,5 @@ if((typeof process !== 'undefined') &&
     module.exports.updateObject = updateObject;
     module.exports.removeProperties = removeProperties;
     module.exports.dedup = dedup;
+}
 }

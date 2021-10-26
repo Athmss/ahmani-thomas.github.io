@@ -14,14 +14,15 @@ const { animal } = require("./data");
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
- function search(animalArr, animalStr) {
+ 
+function search(animalArr, animalStr) {
      for (var i = 0; i < animalArr.length; i++) {
        if (animalArr[i].name === animalStr) {
            return Object.enteries(animalArr[i]);
-       } else {
-           return null;
        }
+       
     }
+    return null;
 }
 
 
