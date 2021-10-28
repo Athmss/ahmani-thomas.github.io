@@ -3,6 +3,8 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
+
+
 var _ = {};
 
 
@@ -103,6 +105,18 @@ _.first = function(array, num) {
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+_.last = function(array, num) {
+    if (num < 0 || Array.isArray(array) !== true) {
+        return [];
+    } else if (typeof num !== "number") {
+        return array[array.length - 1];
+    } else if (num < array.length) {
+        return array.slice(array.length - num);
+    } else {
+        return array;
+    }
+}
+    
 
 /** _.indexOf
 * Arguments:
