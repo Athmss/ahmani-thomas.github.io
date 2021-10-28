@@ -81,10 +81,11 @@ function welcomeMessage(object) {
     for (var key in object) {
         if (key === "name") {
 
-     return "Welcome " + object.name + "!";
+     return "Welcome " + object["name"] + "!";
         }
     }
 }
+welcomeMessage();
 
 
 

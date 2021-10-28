@@ -31,20 +31,44 @@ function search(animalArr, animalStr) {
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+function replace(animalArr, animalStr, animalObj) {
+    for (var i = 0; i < animalArr.length; i++) {
+        if (animalArr[i].name === animalStr) {
+            animalArr[i] = animalObj;
+        }
+    }
+}
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+function remove(animalArr, animalStr) {
+    for (var i = 0; i < animalArr.length; i++) {
+        if (animalArr[i].name !== animalStr) {
+             return animalArr[i];
+        } else {
+            delete animalArr[i];
+        }
+    } 
+    
+}
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+function add(animalArr, animalObj) {
+    if (animalObj.name.length > 0 && animalObj.species.length > 0) {
+        for (var i = 0; i > animalArr.length; i++) {
+            if (animalArr[i].name !== animalObj.name) {
+                animalArr.push(animalObj);
+            }
+        }
+    }
+}
 
 
 /**

@@ -211,7 +211,7 @@ _.each = function(collection, func) {
 _.unique = function (array) {
     var newArr = [];
     for (var i = 0; i < array.length; i++) {
-    if (_.indexOf(array, i) !== -1) {
+    if (_.indexOf(array[i], i) === -1) {
         newArr.push(array[i]);
     }
     return newArr;
@@ -237,6 +237,15 @@ _.unique = function (array) {
 * Extra Credit:
 *   use _.each in your implementation
 */
+
+_.filter = function(array, func) {
+    var newArr = [];
+    if (_.each(func(array[i], i, array)) === true) {
+        for (var i = 0; i < array.length; i++) {
+            newArr.push(array[i], i, array);
+        } 
+
+}
 
 
 
@@ -325,7 +334,6 @@ _.unique = function (array) {
 */
 
 _.every = function(collection, func) {
-    
 }
 
 
@@ -370,6 +378,19 @@ _.every = function(collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(array, func, seed) {
+    if (seed === undefined) {
+        seed = array[0];
+        for (var i = 1; i < array.length; i++) {
+            seed = func(seed, array[i], i);
+        }
+    } else {
+        for (var i = 0; i < array.length; i++) {
+            seed = func(seed, array[i], i);
+        }
+    }
+    return seed;
+}
 
 /** _.extend
 * Arguments:
@@ -386,6 +407,7 @@ _.every = function(collection, func) {
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
+_.extend = function() {}
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -394,4 +416,5 @@ if((typeof process !== 'undefined') &&
    (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = _;
+}
 }
