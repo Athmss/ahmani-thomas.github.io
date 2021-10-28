@@ -4,9 +4,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function triangles() {
-
-  for (var i = "#"; i.length < 8; i += "#") {
-    console.log(i);
+var line = 7;
+  for (var i = 0; i < line; i++) {
+    if (line === "") {
+      li
+    }
   }
   
 }
@@ -34,7 +36,7 @@ function fizzBuzz() {
 
 function drawChessboard() {
   
-  var board = " ";
+  var board = "";
 
   var grid = 8;
 

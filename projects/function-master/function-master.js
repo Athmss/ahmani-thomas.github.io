@@ -2,6 +2,8 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+
+
 function objectValues(object) {
     return Object.values(object);
 
@@ -76,11 +78,13 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-    if (object.key == "name")
-    return "Welcome " + object["name"] + "!";
+    for (var key in object) {
+        if (key === "name") {
+
+     return "Welcome " + object.name + "!";
+        }
+    }
 }
-
-
 
 
 
@@ -101,10 +105,6 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-    for (var key in object) {
-        object["noises"].join(" ");
-    
-         "there are no noises"
     
     }
 
@@ -115,6 +115,16 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
+    
+    var splitStr = string.split(" ");
+    
+    for (var i = 0; i < splitStr.length; i++) {
+        if (splitStr[i] === word) {
+            return true;
+        } 
+    
+    }
+       return false;
 
 }
 
@@ -123,7 +133,12 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+object.friends = [];
+    //add name to objects friend array
+    if (Object.keys(object) === "friends") {
+        object["friends"].push(name);
+    }
+    return object["friends"];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -132,6 +147,7 @@ function addFriend (name, object) {
 
 function isFriend(name, object) {
 
+    
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -189,5 +205,4 @@ if((typeof process !== 'undefined') &&
     module.exports.updateObject = updateObject;
     module.exports.removeProperties = removeProperties;
     module.exports.dedup = dedup;
-}
 }

@@ -45,11 +45,15 @@ _.identity = function(value) {
 * _.typeOf([1,2,3]) -> "array"
 */
 
-      _.typeof = function(value) {
+      _.typeOf = function(value) {
           if (Array.isArray(value) === true) {
               return "array";
+          } else if (value === null) {
+              return "null";
+          } else {
+              return typeof value;
           }
-        }
+      }
 _
 /** _.first
 * Arguments:
@@ -69,7 +73,18 @@ _
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
-
+_.first = function(array, num) {
+    if (typeof num !== "number" ) {
+        return array[0];
+    } else if (num > array.length) {
+        return array;
+    } else if (num < 0 || Array.isArray(array) !== true) {
+        return [];
+    } else {
+        return array.slice(0, num);
+    }
+    
+    }
 /** _.last
 * Arguments:
 *   1) An array
@@ -168,9 +183,7 @@ _.contains = function(array, value) {
 
 _.unique = function (array) {
     var newArr = [];
-    for (var i = 0; i < array.length; i++) {
-        if 
-    }
+
 
     
 }
