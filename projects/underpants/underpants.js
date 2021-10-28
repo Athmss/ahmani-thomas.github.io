@@ -185,12 +185,15 @@ _.contains = function(array, value) {
 */
 
 _.each = function(collection, func) {
-    for (var i = 0; i < collection.length; i++) {
-        return func(arguments) {
-            collection[i] ===
+    if (Array.isArray(collection) === true) {
+        for (var i = 0; i < collection.length; i++) {
+            func(collection[i], i, collection);
+        }  
+        } else {
+            for (var key in collection) {
+                func(collection[key], key, collection);
+            }
         }
-    }
-        
     }
 
 
@@ -208,9 +211,10 @@ _.each = function(collection, func) {
 _.unique = function (array) {
     var newArr = [];
     for (var i = 0; i < array.length; i++) {
-    if (_.indexOf(array, value) === i) {
-        return newArr.push(array[i]);
+    if (_.indexOf(array, i) !== -1) {
+        newArr.push(array[i]);
     }
+    return newArr;
 
     }
 
@@ -319,6 +323,10 @@ _.unique = function (array) {
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
+
+_.every = function(collection, func) {
+    
+}
 
 
 /** _.some
