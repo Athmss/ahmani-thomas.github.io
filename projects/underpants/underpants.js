@@ -184,6 +184,16 @@ _.contains = function(array, value) {
 *      -> should log "a" "b" "c" to the console
 */
 
+_.each = function(collection, func) {
+    for (var i = 0; i < collection.length; i++) {
+        return func(arguments) {
+            collection[i] ===
+        }
+    }
+        
+    }
+
+
 
 /** _.unique
 * Arguments:
@@ -197,6 +207,12 @@ _.contains = function(array, value) {
 
 _.unique = function (array) {
     var newArr = [];
+    for (var i = 0; i < array.length; i++) {
+    if (_.indexOf(array, value) === i) {
+        return newArr.push(array[i]);
+    }
+
+    }
 
 
     
@@ -217,6 +233,7 @@ _.unique = function (array) {
 * Extra Credit:
 *   use _.each in your implementation
 */
+
 
 
 /** _.reject
