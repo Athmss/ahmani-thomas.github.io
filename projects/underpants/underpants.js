@@ -211,13 +211,12 @@ _.each = function(collection, func) {
 _.unique = function (array) {
     var newArr = [];
     for (var i = 0; i < array.length; i++) {
-    if (_.indexOf(array[i], i) === -1) {
+    if (_.indexOf(newArr, array[i]) === -1) {
         newArr.push(array[i]);
     }
-    return newArr;
 
     }
-
+    return newArr;
 
     
 }
@@ -240,10 +239,15 @@ _.unique = function (array) {
 
 _.filter = function(array, func) {
     var newArr = [];
-    if (_.each(func(array[i], i, array)) === true) {
         for (var i = 0; i < array.length; i++) {
-            newArr.push(array[i], i, array);
+
+        if (func(array[i], i, array) === true) {
+             newArr.push(array[i]);
         } 
+        
+    } 
+    return newArr;
+    
 
 }
 
@@ -262,7 +266,15 @@ _.filter = function(array, func) {
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
-
+_.reject = function(array, func) {
+    var newArr = [];
+    for (var i = 0; i < array.length; i++) {
+     if (func(array[i], i, array) === false) {
+        newArr.push(array[i]);
+    }
+}
+return newArr;
+}
 /** _.partition
 * Arguments:
 *   1) An array
@@ -282,6 +294,13 @@ _.filter = function(array, func) {
 }
 */
 
+_.partition = function(array, func) {
+    var newArr = [];
+    for (var i = 0; i < array.length; i++) {
+        func(array[i], i, array);
+    } if 
+}
+
 
 /** _.map
 * Arguments:
@@ -299,7 +318,19 @@ _.filter = function(array, func) {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
-
+_.map = function(collection, func) {
+    var newArr = [];
+    if (Array.isArray(collection) === true) {
+    for (var i = 0; i < collection.length; i++) {
+        newArr.push(func(collection[i], i, collection));
+    }
+} else {
+    for (var key in collection) {
+        newArr.push(func(collection[key], key, collection));
+    }
+}
+return newArr;  
+}
 /** _.pluck
 * Arguments:
 *   1) An array of objects
@@ -310,6 +341,15 @@ _.filter = function(array, func) {
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
+
+_.pluck = function(arrObject, objKey) {
+    
+    for (var i = 0; i < arrObject.length; i++) {
+       return _.map(arrObject, objKey.key);
+    }
+        
+    }
+
 
 
 /** _.every
@@ -334,6 +374,23 @@ _.filter = function(array, func) {
 */
 
 _.every = function(collection, func) {
+    if (func === undefined) {
+        if (Array.isArray(collection) === true) {
+            for (var i = 0; i < collection.length; i++ ) {
+                if (!collection[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    } else {
+        for (var key in collection) {
+            if (!collection[key]) {
+                return false;
+            }
+        }
+    }
+
 }
 
 
@@ -416,5 +473,4 @@ if((typeof process !== 'undefined') &&
    (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = _;
-}
 }

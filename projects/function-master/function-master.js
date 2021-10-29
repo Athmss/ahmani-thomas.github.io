@@ -78,14 +78,10 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-    for (var key in object) {
-        if (key === "name") {
 
-     return "Welcome " + object["name"] + "!";
-        }
-    }
+     return "Welcome " + object.name[0].toUpperCase() + "!";
 }
-welcomeMessage();
+}
 
 
 
