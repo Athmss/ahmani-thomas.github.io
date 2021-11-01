@@ -298,7 +298,8 @@ _.partition = function(array, func) {
     var newArr = [];
     for (var i = 0; i < array.length; i++) {
         func(array[i], i, array);
-    } if 
+    
+}
 }
 
 
@@ -342,11 +343,12 @@ return newArr;
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
-_.pluck = function(arrObject, objKey) {
-    
+_.pluck = function(arrObject, key) {
+    var newArr = [];
     for (var i = 0; i < arrObject.length; i++) {
-       return _.map(arrObject, objKey.key);
+       newArr.push(arrObejct[i][key]);
     }
+    return newArr;
         
     }
 
