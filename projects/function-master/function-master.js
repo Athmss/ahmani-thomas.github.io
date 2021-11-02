@@ -78,10 +78,10 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
+    
+     return "Welcome " + object.name + "!";
+}
 
-     return "Welcome " + object.name[0].toUpperCase() + "!";
-}
-}
 
 
 
@@ -91,7 +91,7 @@ function welcomeMessage(object) {
 
 function profileInfo(object) {
         
-    return object["name"] + " is a " + object["species"];
+    return object.name + " is a " + object.species;
     
 }
 
@@ -130,29 +130,33 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-object.friends = [];
-    //add name to objects friend array
-    if (Object.keys(object) === "friends") {
-        object["friends"].push(name);
-    }
-    return object["friends"];
+    object.friends.push(name);
+    return object;
 }
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 12 - Is Friend ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+            for (var i = 0; i < object.friends.length; i++) {
+                if (name === object.friends[i]) {
+                    return true;
+                } 
+                
+            }
+            return false;
+        }
+            
     
-}
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+   
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -160,6 +164,7 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
+    
 
 }
 

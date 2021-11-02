@@ -21,21 +21,54 @@ var factorial = function(n) {
 // 2. Compute the sum of an array of integers.
 // Example:  sum([1, 2, 3, 4, 5, 6]);  // 21
 var sum = function(array) {
+  //base
+if (array.length === 0) {
+  return 0;
+}
+
+
+  //recursion
+  return array[0] + sum(array.slice(1));
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
 // Example: arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+  var flatArray = array.flat();
+  //base
+if (flatArray.length === 0) {
+  return 0;
+}
+
+
+  //recursion
+  return flatArray[0] + arraySum(flatArray.slice(1));
 };
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+  //base
+if (n === 0) {
+  
+}
+
+
+
+  //recursion
+  
 };
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
+  //base
+ if (n === 0) {
+   return n;
+ }
+
+  //recursion
+  return 
 };
 
 // 6. Get the integers in range (x, y).
@@ -56,14 +89,45 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+  //base
 };
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
+  //base
+  var reverseStr = "";
+  if (string.length === 1) {
+    return string;
+  }
+
+
+  //recursion
+  return string[string.length -1] += reverseStr.slice(0, -1);
+
 };
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  //access string characters
+var firstChar = function(string) {
+return string.slice(0, 1);
+};
+var lastChar = function(string) {
+  return string.slice(0, -1);
+};
+var midChar = function(string) {
+  return string.slice(1, -1);
+};
+  //base
+if (string.length <= 1) {
+  return true;
+} 
+if (firstChar(string) !== lastChar(string)) {
+  return false;
+}
+
+  //recursion
+return palindrome(midChar(string.slice(1, -1)));
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -103,7 +167,12 @@ var compareStr = function(str1, str2) {
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
-var createArray = function(str){
+var createArray = function(str, newArr = []){
+  //base
+  
+
+
+  //recursion
 };
 
 // 17. Reverse the order of an array
