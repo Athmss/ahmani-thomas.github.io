@@ -49,8 +49,8 @@ if (flatArray.length === 0) {
 var isEven = function(n) {
   //base
 if (n === 0) {
-  
-}
+  return true;
+  }
 
 
 
@@ -183,7 +183,16 @@ var reverseArr = function (array) {
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
 var buildList = function(value, length) {
+  var newArr = [];
+  //base
+if (newArr.length === length) {
+  return newArr;
+}
+
+  //recursion
+  return newArr.push(build);
 };
+
 
 // 19. Count the occurence of a value inside a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
