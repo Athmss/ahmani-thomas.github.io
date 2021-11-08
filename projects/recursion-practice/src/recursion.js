@@ -50,12 +50,15 @@ var isEven = function(n) {
   //base
 if (n === 0) {
   return true;
+  } else if (n / 2 !== 0) {
+    return false;
   }
+  
 
 
 
   //recursion
-  
+  return isEven(n / 2);
 };
 
 // 5. Sum all integers below a given integer.
@@ -74,6 +77,11 @@ var sumBelow = function(n) {
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function(x, y) {
+  //base
+
+
+  //recursion
+
 };
 
 // 7. Compute the exponent of a number.
@@ -187,10 +195,12 @@ var buildList = function(value, length) {
   //base
 if (newArr.length === length) {
   return newArr;
+} else {
+  newArr.push(value);
 }
 
   //recursion
-  return newArr.push(build);
+  return ;
 };
 
 
